@@ -132,12 +132,21 @@ Para verificar a instalação:
 python3 -c "import javino; print(javino.__file__)"
 ```
 
-Agora é possível rodar o nó:
+Agora é possível dar build e rodar o nó:
 
 ```bash
+cd ~/ros2_ws
+colcon build
 source /opt/ros/jazzy/setup.bash
 source ~/ros2_ws/install/setup.sh
 ros2 run my_py_pkg javino_ros_bridge
+```
+
+Caso apresente um erro de conexão serial, verifique a porta correta e altere no arquiov de configuração da bridge
+
+```bash
+cd ros2_ws/src/Tutorial_ROS2/my_py_pkg/javino_config
+sudo nano javino_bridge_ChonBots.yaml
 ```
 
 ## 10. Configurar a conexão ROS 2 no agente
